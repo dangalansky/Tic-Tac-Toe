@@ -1,4 +1,4 @@
 # Tic-Tac-Toe
 Text-based version of the popular game Tic-Tac-Toe
 
-This is ongoing. Code is unfinished but I am uploading what I have as I go along. 
+Uploaded the version most nearly finished. There is still a bug that arises when user chooses to finish game that adds one to score and asks again if user wishes to finish game then gives a final score. Still working on it. 
