@@ -13,7 +13,7 @@ def score_board():
     print('-------------------------------')
     print(f'----------X Score: {x_score}-----------')
     print(f'----------O Score: {o_score}-----------')
-    print('-------------------------------')
+    print('-------------------------------\n')
 
 # Print The Board
 def print_board():
@@ -50,7 +50,7 @@ def check_for_win():
             game_on()
         if again.lower() == 'n':
             game_over = True
-            print('Final Score:')
+            print('\nFinal Score:')
             score_board()
     if board[0] == board[1] == board[2] == 'O' or board[3] == board[4] == board[5] == 'O' or board[0] == board[4] == \
             board[8] == 'O' or board[2] == board[4] == board[6] == 'O' or board[0] == board[3] == board[6] == 'O' or \
@@ -63,7 +63,7 @@ def check_for_win():
             game_on()
         if again.lower() == 'n':
             game_over = True
-            print('Final Score:')
+            print('\nFinal Score:')
             score_board()
 
 # Initiate X Turn
@@ -74,7 +74,7 @@ def x_turn():
     check_for_draw()
     if not game_over:
         try:
-            x_choice = int(input('Choose space (1-9) to place "X": '))
+            x_choice = int(input('\nChoose space (1-9) to place "X": '))
             n = x_choice - 1
             if board[n] == '-':
                 board[n] = 'X'
@@ -93,7 +93,7 @@ def o_turn():
     check_for_draw()
     if not game_over:
         try:
-            o_choice = int(input('Choose space (1-9) to place "O": '))
+            o_choice = int(input('\nChoose space (1-9) to place "O": '))
             n = o_choice - 1
             if board[n] == '-':
                 board[n] = 'O'
@@ -106,15 +106,16 @@ def o_turn():
 
 # Game Play
 def game_on():
+    print('\n    Welcome To Tic-Tac-Toe!\n  ')
     score_board()
     number = randint(0, 1)
     if number == 1:
-        print('X Goes First')
+        print('** X Goes First! **\n')
         while not game_over:
             x_turn()
             o_turn()
     if number == 0:
-        print('0 Goes First')
+        print('** 0 Goes First! **\n')
         while not game_over:
             o_turn()
             x_turn()
