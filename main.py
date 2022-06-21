@@ -27,9 +27,9 @@ def check_for_draw():
     global board
     if '-' not in board:
         print('Game over! It\'s A Draw!')
+        board = ['-', '-', '-', '-', '-', '-', '-', '-', '-']
         again = input('Would you like to play again? Y or N: ')
         if again.lower() == 'y':
-            board = ['-', '-', '-', '-', '-', '-', '-', '-', '-']
             game_on()
         else:
             game_over = True
@@ -44,9 +44,9 @@ def check_for_win():
             board[1] == board[4] == board[7] == 'X' or board[2] == board[5] == board[8] == 'X':
         print('\nX WINS!')
         x_score += 1
+        board = ['-', '-', '-', '-', '-', '-', '-', '-', '-']
         again = input('Would you like to play again? Y or N: ')
         if again.lower() == 'y':
-            board = ['-', '-', '-', '-', '-', '-', '-', '-', '-']
             game_on()
         if again.lower() == 'n':
             game_over = True
@@ -57,16 +57,16 @@ def check_for_win():
             board[1] == board[4] == board[7] == 'O' or board[2] == board[5] == board[8] == 'O':
         print('\nO WINS!')
         o_score += 1
+        board = ['-', '-', '-', '-', '-', '-', '-', '-', '-']
         again = input('Would you like to play again? Y or N: ')
         if again.lower() == 'y':
-            board = ['-', '-', '-', '-', '-', '-', '-', '-', '-']
             game_on()
         if again.lower() == 'n':
             game_over = True
             print('Final Score:')
             score_board()
 
-# X Turn
+# Initiate X Turn
 def x_turn():
     global game_over
     print_board()
@@ -85,7 +85,7 @@ def x_turn():
             print("Invalid Entry. Try Again.")
             x_turn()
 
-# O Turn
+# Initiate O Turn
 def o_turn():
     global game_over
     print_board()
