@@ -1,11 +1,12 @@
 from random import randint
 
+# Set Up
 board = ['-', '-', '-', '-', '-', '-', '-', '-', '-']
 x_score = 0
 o_score = 0
 game_over = False
 
-
+# Score Board
 def score_board():
     global x_score
     global o_score
@@ -14,13 +15,13 @@ def score_board():
     print(f'----------O Score: {o_score}-----------')
     print('-------------------------------')
 
-
+# Print The Board
 def print_board():
     print(board[0], board[1], board[2])
     print(board[3], board[4], board[5])
     print(board[6], board[7], board[8])
 
-
+# Check For Draw
 def check_for_draw():
     global game_over
     global board
@@ -35,7 +36,7 @@ def check_for_draw():
             print('Final Score:')
             score_board()
 
-
+# Check For Win
 def check_for_win():
     global game_over, board, x_score, o_score
     if board[0] == board[1] == board[2] == 'X' or board[3] == board[4] == board[5] == 'X' or board[0] == board[4] == \
@@ -65,7 +66,7 @@ def check_for_win():
             print('Final Score:')
             score_board()
 
-
+# X Turn
 def x_turn():
     global game_over
     print_board()
@@ -84,7 +85,7 @@ def x_turn():
             print("Invalid Entry. Try Again.")
             x_turn()
 
-
+# O Turn
 def o_turn():
     global game_over
     print_board()
@@ -103,7 +104,7 @@ def o_turn():
             print("Invalid Entry. Try Again.")
             o_turn()
 
-
+# Game Play
 def game_on():
     score_board()
     number = randint(0, 1)
